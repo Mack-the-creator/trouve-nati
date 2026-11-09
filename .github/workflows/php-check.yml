@@ -19,7 +19,7 @@ jobs:
           php-version: '8.2'
          
       - name: Check PHP syntax
-        run: php -1 index.php
+        run: php -l index.php
 
         
     
