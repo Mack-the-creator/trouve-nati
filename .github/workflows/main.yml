@@ -22,5 +22,5 @@ jobs:
       - name: Verify PHP installation 
         run: php -v 
  
-- name: Check PHP syntax 
-run: php -l index.php 
+      - name: Check PHP syntax 
+        run: php -l index.php 
