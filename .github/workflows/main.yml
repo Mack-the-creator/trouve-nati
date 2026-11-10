@@ -1,22 +1,26 @@
-PHP Syntax check
-
-on:
-  push:
-    branches: [main]
-  pull request:
-    branches: [main]
-
-jobs:
-  php-check:
-   runs on: ubuntu-latest
-
-   steps:  
-     - name: Checkout repository
-     - uses: shivammathur/checkout@v04
-       with:
-         php-version: '8.2'
-         
-     - name: Check PHP syntax
-       run: php -1 index.php
-        
-    
+name: PHP Syntax Check 
+ 
+on: 
+  push: 
+    branches: [main] 
+  pull_request: 
+    branches: [main] 
+ 
+jobs: 
+  php-check: 
+    runs-on: ubuntu-latest 
+ 
+    steps: 
+      - name: Checkout repository 
+        uses: actions/checkout@v4 
+ 
+      - name: Setup PHP 
+        uses: shivammathur/setup-php@v2 
+        with: 
+          php-version: '8.2' 
+ 
+      - name: Verify PHP installation 
+        run: php -v 
+ 
+- name: Check PHP syntax 
+run: php -l index.php 
